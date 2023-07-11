@@ -24,7 +24,9 @@ class LaporanController extends Controller
                 'ph' => $request->ph,
                 'hasil_fuzzy' => $request->hasil_fuzzy
             ]);
-            return response()->json(['message' => 'Data berhasil disimpan'], 200);
+            $swit = DB::table('tswitch')->where('nama', 'switch')->value('switch');
+            return response()->json(['message' => $swit], 200);
+            // return response()->json(['message' => 'Data berhasil disimpan'], 200);
         } catch (\Throwable $th) {
             return response()->json(['message' => $th->getMessage()], 500);
         }
