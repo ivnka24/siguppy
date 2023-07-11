@@ -25,7 +25,7 @@ class LaporanController extends Controller
                 'hasil_fuzzy' => $request->hasil_fuzzy
             ]);
 
-            return response()->json(['message' => 'Data terkirim'], 200);
+            return response()->json(['message' => 'Data sudah terkirim'], 200);
         } catch (\Throwable $th) {
             return response()->json(['message' => $th->getMessage()], 500);
         }
